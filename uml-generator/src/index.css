@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0f1117;
+  --bg-secondary: #1a1d27;
+  --bg-tertiary: #252836;
+  --border-color: #2d3148;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --accent: #6366f1;
+  --accent-hover: #818cf8;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #3d4166;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5a5f8a;
+}
+
+/* React Flow overrides */
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  border: 2px solid #6366f1 !important;
+  background: #1a1d27 !important;
+  cursor: crosshair !important;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.react-flow__node:hover .react-flow__handle,
+.react-flow__handle:hover {
+  opacity: 1 !important;
+}
+
+.react-flow__handle-connecting {
+  opacity: 1 !important;
+  background: #6366f1 !important;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.react-flow__controls button {
+  background: #1a1d27 !important;
+  border: 1px solid #2d3148 !important;
+  color: #e2e8f0 !important;
+  fill: #e2e8f0 !important;
+}
+.react-flow__controls button:hover {
+  background: #252836 !important;
+}
+
+.react-flow__minimap {
+  background: #1a1d27 !important;
+  border: 1px solid #2d3148 !important;
+  border-radius: 8px !important;
+}
+
+.react-flow__minimap-mask {
+  fill: rgba(99, 102, 241, 0.15) !important;
+}
+
+/* Light mode overrides */
+.light-mode {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --border-color: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --accent: #6366f1;
+}
+
+.light-mode body,
+.light-mode #root {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+/* Code editor */
+.code-container {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Syntax highlighting */
+.token-keyword { color: #c792ea; }
+.token-type { color: #80cbc4; }
+.token-string { color: #c3e88d; }
+.token-comment { color: #546e7a; font-style: italic; }
+.token-number { color: #f78c6c; }
+.token-operator { color: #89ddff; }
+.token-modifier { color: #c792ea; }
+.token-class-name { color: #ffcb6b; }
+
+/* Toast override */
+.Toastify__toast {
+  border-radius: 10px !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* UML Node styles */
+.uml-node {
+  user-select: none;
+}
+
+.uml-node-selected {
+  box-shadow: 0 0 0 2px #6366f1, 0 0 20px rgba(99, 102, 241, 0.3) !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.2s ease-out;
+}
